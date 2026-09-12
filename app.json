@@ -10,6 +10,10 @@
       "bundleIdentifier": "com.manudelaguila.deporteapp"
     },
     "android": {
+      "package": "com.manudelaguila.deporteapp",
+      "permissions": [
+        "android.permission.health.READ_STEPS"
+      ],
       "predictiveBackGestureEnabled": false
     },
     "web": {
@@ -20,13 +24,26 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF"
+          "backgroundColor": "#208AEF",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200
         }
       ],
       [
         "expo-sensors",
         {
           "motionPermission": "Deporte App necesita acceder al movimiento para calcular tus pasos."
+        }
+      ],
+      "react-native-health-connect",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36,
+            "minSdkVersion": 26
+          }
         }
       ]
     ],

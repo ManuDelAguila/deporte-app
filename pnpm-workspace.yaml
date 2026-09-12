@@ -1,3 +1,4 @@
+nodeLinker: hoisted
 minimumReleaseAgeExclude:
   - '@expo/cli@57.0.24'
   - '@expo/fingerprint@0.20.13'
