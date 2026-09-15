@@ -30,3 +30,5 @@ minimumReleaseAgeExclude:
   - expo-manifests@57.0.2
   - expo-updates-interface@57.0.2
   - expo-sensors@57.0.3
+allowBuilds:
+  esbuild: true

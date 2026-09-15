@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: deporte-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: deporte
+      POSTGRES_USER: deporte
+      POSTGRES_PASSWORD: deporte_local_password
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - deporte_postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U deporte -d deporte"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  deporte_postgres_data:

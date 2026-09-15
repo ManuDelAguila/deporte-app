@@ -7,6 +7,16 @@
     "mobile:start": "pnpm --filter deporte-app start",
     "mobile:android": "pnpm --filter deporte-app android",
     "mobile:web": "pnpm --filter deporte-app web",
-    "mobile:lint": "pnpm --filter deporte-app lint"
-  }
+    "mobile:lint": "pnpm --filter deporte-app lint",
+
+    "api:dev": "pnpm --filter @deporte/api dev",
+    "api:build": "pnpm --filter @deporte/api build",
+    "api:start": "pnpm --filter @deporte/api start",
+    "api:typecheck": "pnpm --filter @deporte/api typecheck",
+    "auth:migrate": "pnpm --filter @deporte/api auth:migrate",
+
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:status": "docker compose ps"
+    }
 }
