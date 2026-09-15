@@ -6,7 +6,9 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  apps/mobile:
     dependencies:
       '@expo/ui':
         specifier: ~57.0.18
