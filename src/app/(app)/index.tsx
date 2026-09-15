@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
-import { AppState, StyleSheet, Text } from 'react-native';
+import { AppState, Button, StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import StepsCard from '@/components/StepsCard';
 import { getTodaySteps } from '@/services/steps/getTodaySteps';
 
+import { useAuth } from '@/contexts/AuthContext';
+
 export default function HomeScreen() {
+
+  const { signOut } = useAuth();
+
   const [steps, setSteps] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -57,6 +62,7 @@ export default function HomeScreen() {
       ) : (
         <StepsCard steps={steps} goal={10000} />
       )}
+      <Button title="Cerrar sesión" onPress={signOut} />
     </SafeAreaView>
   );
 }
